@@ -1,0 +1,53 @@
+@font-face {
+	font-family: 'Oswald-light'; 
+	src: url(Font/static/Oswald-Light.ttf); 
+}
+h2{
+    margin-top: 50px;
+    font-family: 'Oswald-light'; 
+    font-size: 100px;
+    font-weight: 800;
+    color: #B38F58;
+    border: 0px;
+    transition: 0.1s;
+}
+body{
+    width: 1920px;
+    height: 1080px;
+    background-color: #262626;
+    font-size: 20px;
+    color: white;
+    font-family: 'Oswald-light';
+}
+button[name="glav"]{
+    margin-top: 50px;
+    font-family: 'Oswald-light'; 
+    font-size: 50px;
+    font-weight: 100;
+    color: #B38F58;
+    background-color: #ffffff;
+    border: 0px;
+    transition: 0.1s;
+}
+button{
+    margin-top: 50px;
+    font-family: 'Oswald-light'; 
+    font-size: 15px;
+    font-weight: 100;
+    color: #262626;
+    background-color: #ffffff;
+    border: 0px;
+    transition: 0.1s;
+}
+button:hover{
+    padding-left: 10px;
+}
+.a_glav{
+    text-decoration: none;
+    transition: 0.1s;
+    color: #262626;
+}
+.a_glav:hover{
+    transition: 0.1s;
+    padding-left: 10px;
+}

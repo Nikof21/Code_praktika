@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+  <title>Анимация синего круга</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="400"></canvas>
+  <script>
+ 
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let x = canvas.width / 2;
+    let y = canvas.height / 2;
+    const radius = 30;
+
+    let angle = 0;
+
+    const angleStep = 0.05;
+    const animationSpeed = 5;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, 2 * Math.PI);
+      ctx.fillStyle = 'blue';
+      ctx.fill();
+      ctx.closePath();
+
+      x = canvas.width / 2 + Math.cos(angle) * 100;
+      y = canvas.height / 2 + Math.sin(angle) * 100;
+
+      angle += angleStep;
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+@font-face {
+	font-family: 'Oswald'; 
+	src: url(Font/Oswald-VariableFont_wght.ttf); 
+}
+@font-face {
+	font-family: 'Oswald-Regular'; 
+	src: url(Font/static/Oswald-Regular.ttf); 
+}
+@font-face {
+	font-family: 'Oswald-light'; 
+	src: url(Font/static/Oswald-Light.ttf); 
+}
+
+body{
+    width: 1920px;
+    height: 1080px;
+    background-color: #262626;
+    display: flex;
+    align-items: center;
+}
+.container_menu{
+    position: fixed;
+    width: 320px;
+    height: 1080px;
+    background-image: url(img/menu1.png);
+    transition: 0.3s;
+}
+.container_menu:hover{
+    background-image: none;
+    transition: 0.3s;
+}
+.ml{
+    width: 320px;
+    height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.5s;
+    margin-left: 0px;
+    position: fixed;
+    opacity: 0;
+}
+.ml:hover{
+    transition: 0.3s;
+    background-image: url(img/menu.png);
+    opacity: 1;
+}
+.a1{
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+    font-family: 'Oswald-light';
+    font-weight: 100;
+    font-size: 40px;
+    z-index: 2;
+    opacity: 1;
+    transition: 0.5s;
+    text-align: left;
+}
+.a1:hover{
+    font-size: 50px;
+    transition: 0.1s;
+    color: white;
+}
+.container_karta{
+    display: flex;
+    margin-left: 320px;
+    width: 1400px;
+    height: 600px;
+    background-size: 5%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+h2{
+    font-size: 200px;
+    font-family: 'Oswald-Regular'; 
+    color: #B38F58;
+    font-weight: 100;
+    line-height: 110.402%;
+}
+.karta{
+    padding: 50px;
+    width: 800px;
+    height: 800px;
+    border: 10px solid #B38F58;;
+}

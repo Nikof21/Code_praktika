@@ -1,0 +1,17 @@
+User-agent: Yandex
+Disallow: /admin
+Disallow: *?page= 
+Host: site.ru
+Sitemap: /sitemap.xml
+
+User-agent: googlebot
+Disallow: /admin
+Disallow: *?page= 
+Host: site.ru 
+Sitemap: /sitemap.xml
+
+User-agent:*
+Disallow: /admin
+Disallow: *?page=
+Host: site.ru
+Sitemap: /sitemap.xml

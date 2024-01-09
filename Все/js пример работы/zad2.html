@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        img {
+            width: 300px;
+            position: absolute;
+            transition: all .4s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="1.svg" alt="" id="ghost">
+    <img src="1.svg" alt="" id="ghost">
+    <img src="1.svg" alt="" id="ghost">
+    <script>
+        let ghosts = document.querySelectorAll('#ghost');
+        function moveGhost() {
+            ghosts[0].style.bottom = '900px';
+            ghosts[1].style.bottom = '1250px';
+            ghosts[2].style.bottom = '1600px';
+        }
+            setInterval(moveGhost, 1000);
+            function moveGhostBack() {
+                ghosts[0].style.bottom = '0px';
+                ghosts[1].style.bottom = '350px';
+                ghosts[2].style.bottom = '700px';
+            }
+                setInterval(moveGhostBack,2000);
+    </script>
+</body>
+
+</html>

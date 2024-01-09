@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="katalog.css">
+    <title>КАТАЛОГ</title>
+</head>
+<body>
+    <div class="container_menu">
+        <li class="ml">
+            <ul><a class="a1" href="onas.html">О НАС</a></ul>  
+            <ul><a class="a1" href="katalog.html">КАТАЛОГ</a></ul>
+            <ul><a class="a1" href="novosti.html">НОВОСТИ</a></ul>
+            <ul><a class="a1" href="kontakt.html">КОНТАКТЫ</a></ul>
+            <ul><a class="a1" href="akk.php">АККАУНТ</a></ul>
+            <ul><a class="a1" href="korzina.php">КОРЗИНА</a></ul>
+        </li>
+    </div>
+    <div class="container_katalog">
+        <div class="nazvanie">
+            <h2>КАТАЛОГ</h2>
+            <p>НОВОЕ ПОСТУПЛЕНИЕ</p>
+        </div>
+        <div class="tovar1" id="GRANDEZZA">
+            <img src="img/tovar1.png">
+            <div class="tovar_p">
+                <p class="harak">ХАРАКТЕРИСТИКИ</p>
+                <div class="text_harak">
+                    <p class="t_w">РАБОЧИЙ ОБЪЕМ:</p>
+                    <p class="t_y">680 СМ.КУБ.</p>
+                    <br>
+                    <p class="t_w">МОЩНОСТЬ:</p>
+                    <p class="t_y">132.2 Л.С.</p>
+                    <br>
+                    <p class="t_w">ВЕС:</p>
+                    <p class="t_y">198 КГ.</p>
+                    <br>
+                    <p class="t_w">МАКСИМАЛЬНАЯ СКОРОСТЬ:</p>
+                    <p class="t_y">240 КМ/Ч</p>
+                </div>
+                <div class="pokupka">
+                    <button class="buy-button" style="
+                        font-family: 'Oswald-light';
+                        border: 0px solid;
+                        color: #262626;
+                        font-size: 100px;
+                        font-weight: 600;
+                        padding-bottom: 10px;
+                        margin-top: 50px;
+                        " onclick="addToCart('GRANDEZZA')">КУПИТЬ</button>
+                    <p class="p2">В ОДИН КЛИК</p>
+                </div>
+            </div>
+        </div>
+        <div class="tovar2" id="PI-203">
+            <img src="img/tovar2.png">
+            <div class="tovar_p">
+                <p class="harak">ХАРАКТЕРИСТИКИ</p>
+                <div class="text_harak">
+                    <p class="t_w">РАБОЧИЙ ОБЪЕМ:</p>
+                    <p class="t_y">680 СМ.КУБ.</p>
+                    <br>
+                    <p class="t_w">МОЩНОСТЬ:</p>
+                    <p class="t_y">180.2 Л.С.</p>
+                    <br>
+                    <p class="t_w">ВЕС:</p>
+                    <p class="t_y">150 КГ.</p>
+                    <br>
+                    <p class="t_w">МАКСИМАЛЬНАЯ СКОРОСТЬ:</p>
+                    <p class="t_y">280 КМ/Ч</p>
+                </div>
+                <div class="pokupka">
+                    <button class="buy-button" style="
+                        font-family: 'Oswald-light';
+                        border: 0px solid;
+                        color: #262626;
+                        font-size: 100px;
+                        font-weight: 600;
+                        padding-bottom: 10px;
+                        margin-top: 50px;
+                        " onclick="addToCart('PI-203')">КУПИТЬ</button>
+                    <p class="p2">В ОДИН КЛИК</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function addToCart(productName) {
+            try {
+                const response = await fetch('handle_order.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ addToCart: true, productName }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                alert(data.message);
+
+                // Дополнительные действия при успешном добавлении в корзину (например, обновление интерфейса)
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
